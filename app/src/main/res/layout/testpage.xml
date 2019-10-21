@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@color/testbackground">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="选择你要测试的方式" android:textAlignment="center" android:textSize="25dp"
+    />
+    <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:rowCount="2" android:columnCount="2" android:layout_marginTop="20dp"
+    >
+        <ImageButton android:layout_row="0" android:layout_column="0"
+            android:layout_width="150dp" android:layout_height="150dp"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+            android:layout_columnWeight="1" android:background="@drawable/englishchoosechinese"
+                     android:onClick="EnglishChooseChineseClick"
+        />
+
+        <ImageButton android:layout_row="0" android:layout_column="1"
+                     android:layout_width="150dp" android:layout_height="150dp"
+                     android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                     android:layout_columnWeight="1" android:background="@drawable/spell"
+                     android:onClick="SpellClick"
+        />
+
+        <ImageButton android:layout_row="1" android:layout_column="0"
+                     android:layout_width="150dp" android:layout_height="150dp"
+                     android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginTop="10dp"
+                     android:layout_columnWeight="1" android:background="@drawable/listenspell"
+                     android:onClick="ListenSpellClick"
+        />
+
+        <Button android:layout_row="1" android:layout_column="1" android:background="@drawable/expectbutton"
+                     android:layout_width="150dp" android:layout_height="150dp"
+                     android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginTop="10dp"
+                     android:layout_columnWeight="1"
+                     android:text="敬请期待..." android:textSize="25dp" android:textColor="@color/DeepSkyBlue"
+        />
+    </GridLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="fill_parent" android:orientation="horizontal">
+
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="bottom" android:layout_weight="1"
+                android:background="@drawable/mainpage_button"
+                android:text="返回" android:onClick="TestPageBack"
+        />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+         android:orientation="horizontal"
+    >
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:text="搜索" android:gravity="center_vertical" android:textSize="20dp"
+            android:focusableInTouchMode="true" android:focusable="true"
+        />
+        <EditText android:layout_width="280dp" android:layout_height="wrap_content"
+            android:textSize="25dp" android:id="@+id/searchbar" android:paddingLeft="15dp"
+                  android:layout_marginLeft="5dp" android:singleLine="true" android:paddingRight="15dp"
+                  android:background="@drawable/search_edittext" android:layout_gravity="center_vertical"
+                  android:imeOptions="actionSearch"
+        />
+        <ImageButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:background="@drawable/search" android:onClick="SearchAgain" android:id="@+id/searchagainbtn"
+        />
+
+    </LinearLayout>
+    <ListView android:layout_width="match_parent" android:layout_height="580dp"
+        android:id="@+id/search_list"  android:dividerHeight="5dp" android:divider="@color/white"
+    >
+    </ListView>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="fill_parent"
+        android:gravity="bottom"
+    >
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/mainpage_button" android:text="@string/back" android:onClick="SearchListBack"
+        />
+
+
+    </LinearLayout>
+</LinearLayout>

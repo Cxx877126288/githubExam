@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="请选择要复习的日期" android:textSize="25dp" android:textAlignment="center"
+    />
+    <ListView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="2"
+        android:id="@+id/choosetesttime_list" android:dividerHeight="5dp" android:divider="@color/white"
+    ></ListView>
+    <LinearLayout android:layout_width="match_parent" android:layout_weight="1"
+                  android:layout_height="wrap_content" android:gravity="bottom"
+    >
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/mainpage_button" android:text="@string/back" android:onClick="BackToChooseTestWay"
+        />
+
+    </LinearLayout>
+</LinearLayout>

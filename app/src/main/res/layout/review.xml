@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.englishwords.page.Review"
+        android:orientation="vertical"
+        android:background="@color/white"
+>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                 android:layout_marginTop="120dp"
+    >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/review_word_infor"
+                android:textSize="20dp"
+                android:textAlignment="center"
+        />
+        <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                     android:background="#ffffff" android:src="@drawable/mic"
+                     android:onClick="ReviewSpeakClick" android:layout_marginLeft="320dp"
+                     android:layout_marginTop="70dp" android:id="@+id/review_speak"
+        />
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="fill_parent"
+                  android:gravity="bottom" android:orientation="vertical"
+    >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" android:layout_weight="1"
+                    android:background="@drawable/mainpage_button" android:onClick="BeforeWord"
+                    android:text="上一个"
+            />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" android:layout_weight="1"
+                    android:background="@drawable/mainpage_button"
+                    android:text="返回" android:onClick="ReviewBackToMain"
+            />
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="bottom" android:layout_weight="1"
+                    android:background="@drawable/mainpage_button"
+                    android:text="下一个" android:onClick="AfterWord"
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+        android:background="@drawable/ilovestudy" android:orientation="vertical"
+              android:gravity="center_vertical"
+>
+
+    <LinearLayout android:layout_width="250dp" android:layout_height="wrap_content"
+
+                  android:layout_marginLeft="60dp"  android:orientation="vertical"
+    >
+        <TextView android:layout_width="match_parent" android:layout_height="30dp"
+                  android:id="@+id/bookname" android:textSize="20dp"
+        />
+        <TextView android:layout_width="match_parent" android:layout_height="30dp"
+                  android:id="@+id/bookcount" android:textSize="20dp"
+        />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:text="@string/set_everyday_words" android:textAlignment="center"
+                  android:textSize="25dp" android:textColor="@color/chocolates"
+        />
+        <EditText android:layout_width="match_parent" android:layout_height="50dp" android:id="@+id/set_number"
+            android:singleLine="true"
+        />
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+            <Button android:layout_width="90dp" android:layout_height="40dp"
+                    android:background="@drawable/surebutton" android:text="@string/sure"
+                    android:textSize="25dp" android:layout_marginTop="30dp" android:layout_marginLeft="20dp"
+                    android:onClick="RememberWordsNumber"
+            />
+            <Button android:layout_width="90dp" android:layout_height="40dp"
+                    android:background="@drawable/surebutton" android:text="@string/back"
+                    android:textSize="25dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp"
+                    android:onClick="BackChooseBook"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
