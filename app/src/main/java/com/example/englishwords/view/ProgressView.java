@@ -1,4 +1,4 @@
-package com.example.englishwords.myView;
+package com.example.englishwords.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

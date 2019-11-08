@@ -28,9 +28,10 @@ import java.util.Locale;
  * @title: Review
  * @projectName Words_System
  * @date 2019/9/6  16:42
+ * 复习页面
  */
 public class Review extends AppCompatActivity {
-	private int index = 0;
+	private int index = 0;    //用来控制显示的下标
 	private TextToSpeech speak;
 	private Context context = null;    //上下文参数
 	private List<Word> words = new ArrayList<>(  );   //复习的单词列表
@@ -91,6 +92,9 @@ public class Review extends AppCompatActivity {
 		}
 	}
 
+	/**
+	 * 点击上一个
+	 * */
 	public void BeforeWord(View view) {
 		if(index > 0){
 			index--;
@@ -100,10 +104,9 @@ public class Review extends AppCompatActivity {
 		}
 	}
 
-	public void ReviewBackToMain(View view) {
-		Quit();
-	}
-
+	/**
+	 * 点击下一个
+	 * */
 	public void AfterWord(View view) {
 		if(index < words.size() -1 ){
 			index++;
@@ -113,6 +116,16 @@ public class Review extends AppCompatActivity {
 		}
 	}
 
+	/**
+	 * 退出
+	 * */
+	public void ReviewBackToMain(View view) {
+		Quit();
+	}
+
+	/**
+	 * 真机返回
+	 * */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -122,12 +135,18 @@ public class Review extends AppCompatActivity {
 		return super.onKeyDown( keyCode, event );
 	}
 
+	/**
+	 * 退出方法整合
+	 * */
 	private void Quit(){
 		speak.stop();
 		speak.shutdown();
 		finish();
 	}
 
+	/**
+	 * 显示单词信息
+	 * */
 	public void Show() {
 		TextView tv = findViewById( R.id.review_word_infor );
 		String show = "单词拼写：" + words.get( index ).getWord() + "\n\n\n单词发音：" + words.get( index ).getAccent() + "\n\n\n单词释义：\n\b\b" + words.get( index ).getMean_cn();

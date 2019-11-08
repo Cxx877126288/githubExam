@@ -74,6 +74,9 @@ public class ChooseWordsBook extends AppCompatActivity {
  * 返回按钮
  * */
 	public void QuitSystem(View view){
+
+		Intent intent = new Intent( context,SearchPage.class );
+		startActivity( intent );
 		finish();
 	}
 
@@ -83,6 +86,9 @@ public class ChooseWordsBook extends AppCompatActivity {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+			Intent intent = new Intent( context,SearchPage.class );
+			startActivity( intent );
 			finish();
 		}
 		return super.onKeyDown( keyCode, event );

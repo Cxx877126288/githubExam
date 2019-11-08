@@ -7,4 +7,9 @@
     <string name="quit">退出</string>
     <string name="choose_book">请选择要背的单词本</string>
     <string name="set_everyday_words">计划每日单词数目</string>
+    <string name="know">认识</string>
+    <string name="join_strange">加入生词本</string>
+    <string name="unknow">不认识</string>
+    <string name="class_test">随堂测验</string>
+
 </resources>

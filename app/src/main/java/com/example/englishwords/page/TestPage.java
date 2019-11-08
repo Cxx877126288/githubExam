@@ -16,6 +16,7 @@ import com.example.englishwords.R;
  * @title: TestPage
  * @projectName Words_System
  * @date 2019/9/10  15:07
+ * 选择测试类型的界面
  */
 public class TestPage extends AppCompatActivity {
 	private Context context;

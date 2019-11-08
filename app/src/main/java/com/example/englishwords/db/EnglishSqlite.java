@@ -30,6 +30,7 @@ public class EnglishSqlite extends SQLiteOpenHelper {
 	public EnglishSqlite(Context context) {
 		super( context, "englishwords", null, 1 );
 	}
+
 	public EnglishSqlite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
 		super( context, name, factory, version );
 	}

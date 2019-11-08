@@ -24,6 +24,7 @@ import java.util.Locale;
  * @title: SearchDetailPage
  * @projectName Words_System
  * @date 2019/9/10  14:19
+ * 查询页面点击项目后 显示详细信息页面
  */
 public class SearchDetailPage extends AppCompatActivity {
 	private Context context;
@@ -41,8 +42,12 @@ public class SearchDetailPage extends AppCompatActivity {
 		loadSpeak();
 	}
 
+	/**
+	 * 初始化页面
+	 * */
 	private void loadpage() {
 		Intent intent = getIntent();
+		//获取显示详细的单词ID
 		int id = intent.getIntExtra( "id", 0 );
 		word = ws.selOne( id );
 		TextView tx = findViewById( R.id.search_word_infor );
@@ -52,6 +57,9 @@ public class SearchDetailPage extends AppCompatActivity {
 		tx.setText( show );
 	}
 
+	/**
+	 * 初始化语音控件
+	 * */
 	public void loadSpeak(){
 		speak = new TextToSpeech( this, new TextToSpeech.OnInitListener() {
 			@Override
@@ -68,6 +76,9 @@ public class SearchDetailPage extends AppCompatActivity {
 		} );
 	}
 
+	/**
+	 * 发音
+	 * */
 	public void SearchSpeakClick(View view){
 		if( speak != null && !speak.isSpeaking()){
 			speak.setPitch(0.9f); // 设置音调，值越大声音越尖（女生），值越小则变成男声,1.0是常规
@@ -75,16 +86,25 @@ public class SearchDetailPage extends AppCompatActivity {
 		}
 	}
 
+	/**
+	 * 整合退出方法
+	 * */
 	private void Quit(){
 		speak.shutdown();
 		speak.stop();
 		finish();
 	}
 
+	/**
+	 * 退出
+	 * */
 	public void SearchDetailBack(View view){
 		Quit();
 	}
 
+	/**
+	 * 真机返回按钮
+	 * */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {

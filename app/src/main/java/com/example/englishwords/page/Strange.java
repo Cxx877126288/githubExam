@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.example.englishwords.R;
-import com.example.englishwords.myadapter.StrangeBookAdapter;
+import com.example.englishwords.adapter.StrangeBookAdapter;
 import com.example.englishwords.pojo.Word;
 import com.example.englishwords.service.WordService;
 import com.example.englishwords.service.impl.WordServiceImpl;
@@ -28,6 +28,7 @@ import java.util.Locale;
  * @title: Strange
  * @projectName Words_System
  * @date 2019/9/6  9:22
+ * 生词本
  */
 public class Strange extends AppCompatActivity {
 	private Context context;

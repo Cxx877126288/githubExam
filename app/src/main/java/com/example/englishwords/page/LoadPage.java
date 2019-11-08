@@ -10,8 +10,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import com.example.englishwords.R;
 import com.example.englishwords.db.EnglishSqlite;
-import com.example.englishwords.myView.ProgressView;
-import com.example.englishwords.myView.ProgressViewThread;
+import com.example.englishwords.view.ProgressView;
+import com.example.englishwords.view.ProgressViewThread;
 import com.example.englishwords.util.loadOperator;
 
 import java.io.*;
@@ -22,6 +22,7 @@ import java.lang.reflect.Field;
  * @title: LoadPage
  * @projectName Words_System
  * @date 2019/7/1  9:31
+ * 加载页面
  */
 public class LoadPage extends AppCompatActivity {
 	private Context context;
@@ -37,14 +38,16 @@ public class LoadPage extends AppCompatActivity {
 			//文件不存在就生成加载文件并设成false
 			loadOperator.loadFile( context );
 		}else{
-			//如果为true则为加载过
+			//如果存在则为加载过
 			Intent intent = new Intent( context, SearchPage.class );
-			context.startActivity( intent );  //能跳转
+			startActivity( intent );  //能跳转
 			finish();
 		}
 		if ("false".equals( loadOperator.readLoad( context ).trim() )) {
 			//没有加载过
 			setContentView( R.layout.loadpage );
+			//加载完页面修改加载文件
+			loadOperator.update( context );
 			try {
 				EnglishSqlite my = new EnglishSqlite( context );
 				String sql = "insert into thesaurus values(?,?,?,?)";
@@ -78,7 +81,7 @@ public class LoadPage extends AppCompatActivity {
 				e.printStackTrace();
 			}
 
-			//开始加载数据，并且将标志文件设为true
+			//开始加载数据
 			ProgressView progress = findViewById( R.id.progressbar );
 			ProgressViewThread pvt = new ProgressViewThread( progress, context, this );
 			pvt.start();

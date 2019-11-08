@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.example.englishwords.R;
-import com.example.englishwords.myadapter.ChooseTestTimeAdapter;
+import com.example.englishwords.adapter.ChooseTestTimeAdapter;
 import com.example.englishwords.util.fileOperator;
 
 import java.util.List;

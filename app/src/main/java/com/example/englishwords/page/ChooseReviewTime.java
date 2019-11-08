@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.*;
 import android.widget.*;
 import com.example.englishwords.R;
-import com.example.englishwords.myadapter.ReviewTimeAdapter;
+import com.example.englishwords.adapter.ReviewTimeAdapter;
 import com.example.englishwords.util.fileOperator;
 
 import java.util.List;

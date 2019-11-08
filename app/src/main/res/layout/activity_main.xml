@@ -28,8 +28,8 @@
         />
         <Button android:layout_width="wrap_content" android:layout_height="30dp"
                 android:id="@+id/follow_test" android:visibility="invisible" android:onClick="test"
-                android:gravity="right" android:background="@color/white" android:text="随堂测验"
-                android:textSize="20dp" android:layout_gravity="right" 
+                android:gravity="right" android:background="@color/white" android:text="@string/class_test"
+                android:textSize="20dp" android:layout_gravity="right"
         />
     </LinearLayout>
 
@@ -64,17 +64,17 @@
                 <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_gravity="bottom" android:layout_weight="7"
                         android:background="@drawable/mainpage_button"
-                        android:text="认识" android:onClick="knowBtnClick" android:id="@+id/realize"
+                        android:text="@string/know" android:onClick="knowBtnClick" android:id="@+id/realize"
                 />
                 <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_gravity="bottom" android:layout_weight="1"
                         android:background="@drawable/mainpage_button"
-                        android:text="加入生词本" android:id="@+id/join" android:onClick="JoinBtnClick"
+                        android:text="@string/join_strange" android:id="@+id/join" android:onClick="JoinBtnClick"
                 />
                 <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:layout_gravity="bottom" android:layout_weight="7"
                         android:background="@drawable/mainpage_button"
-                        android:text="忘记" android:onClick="unKnowBtnClick" android:id="@+id/forget"
+                        android:text="@string/unknow" android:onClick="unKnowBtnClick" android:id="@+id/forget"
                 />
             </LinearLayout>
             <Button android:layout_width="match_parent" android:layout_height="wrap_content"

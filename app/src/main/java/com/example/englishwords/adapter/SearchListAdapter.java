@@ -1,4 +1,4 @@
-package com.example.englishwords.myadapter;
+package com.example.englishwords.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -12,16 +12,16 @@ import java.util.List;
 
 /**
  * @author HX
- * @title: StrangeBookAdapter
+ * @title: SearchListAdapter
  * @projectName Words_System
- * @date 2019/9/6  9:36
- * 生词本的适配器
+ * @date 2019/9/10  8:57
+ * 搜索页面的适配器
  */
-public class StrangeBookAdapter extends BaseAdapter {
+public class SearchListAdapter extends BaseAdapter {
 	private List<Word> words;
 	private Context context;
 
-	public StrangeBookAdapter(List<Word> words,Context context) {
+	public SearchListAdapter(List<Word> words, Context context) {
 		this.words = words;
 		this.context = context;
 	}
@@ -43,18 +43,11 @@ public class StrangeBookAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
-		ViewGroup vg =(ViewGroup)View.inflate( context, R.layout.strange_adpter,null );
-		TextView word = vg.findViewById( R.id.word );
-		TextView mean = vg.findViewById( R.id.word_mean );
-		TextView id = vg.findViewById( R.id.word_id );
-		TextView speak = vg.findViewById( R.id.word_speak );
-
-		int topic_id = ((Word) getItem( i )).getTopic_id();
+		ViewGroup vg =(ViewGroup)View.inflate( context, R.layout.searchlist_adpter,null );
+		TextView word = vg.findViewById( R.id.search_word );
+		TextView mean = vg.findViewById( R.id.search_word_mean );
 		word.setText( ((Word)getItem( i )).getWord() );
 		mean.setText( ((Word)getItem( i )).getMean_cn() );
-		id.setText( String.valueOf(topic_id) );
-		speak.setText( ((Word)getItem( i )).getAccent()  );
-
 		return vg;
 	}
 }

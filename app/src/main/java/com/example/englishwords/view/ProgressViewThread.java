@@ -1,4 +1,4 @@
-package com.example.englishwords.myView;
+package com.example.englishwords.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -60,6 +60,7 @@ public class ProgressViewThread extends Thread {
 //		Intent intent = new Intent( context,ChooseWordsBook.class );
 		if(jump){
 			jump =false;
+
 			Intent intent = new Intent( context,SearchPage.class );
 			context.startActivity( intent );  //能跳转
 			ac.finish();

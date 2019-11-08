@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import com.example.englishwords.R;
-import com.example.englishwords.myadapter.SearchListAdapter;
+import com.example.englishwords.adapter.SearchListAdapter;
 import com.example.englishwords.pojo.Word;
 import com.example.englishwords.service.WordService;
 import com.example.englishwords.service.impl.WordServiceImpl;
@@ -27,12 +27,13 @@ import java.util.List;
  * @title: SearchListPage
  * @projectName Words_System
  * @date 2019/9/10  8:42
+ * 搜索完成的列表显示页面
  */
 public class SearchListPage extends AppCompatActivity {
 	private Context context;
-	private SearchListAdapter adapter;
-	private WordService ws = new WordServiceImpl();
-	private ListView lv;
+	private SearchListAdapter adapter;   //搜索结果适配器
+	private WordService ws = new WordServiceImpl();    //单词服务，搜索单词的
+	private ListView lv;       //显示结果列表
 	private Boolean flag = false;
 	private Boolean ClickFlag = true;
 	@Override
@@ -45,13 +46,18 @@ public class SearchListPage extends AppCompatActivity {
 		loadpage();
 	}
 
+	/**
+	 * 初始化界面
+	 * */
 	private void loadpage() {
 		Intent intent = getIntent();
+//		获得查询的关键字
 		String search = intent.getStringExtra( "search" );
 		EditText et = findViewById( R.id.searchbar );
 		et.setText( search );
 		et.setSelection( search.length() );
 
+		//监听小键盘的搜索按键是否按下
 		et.setOnEditorActionListener( new TextView.OnEditorActionListener() {
 			@Override
 			public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -61,6 +67,7 @@ public class SearchListPage extends AppCompatActivity {
 			}
 		} );
 
+		//监听文本变化
 		et.addTextChangedListener( new TextWatcher() {
 			@Override
 			public void beforeTextChanged(CharSequence text, int start, int before, int count) {
@@ -69,9 +76,11 @@ public class SearchListPage extends AppCompatActivity {
 			public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 				EditText et = findViewById( R.id.searchbar );
 				if(!et.getText().toString().equals( "" )){
+//					不为空串就显示小键盘
 					flag = false;
 					SearchAgain( et );
 				}else {
+					//如果所搜的是空串就什么都不显示
 					List<Word> s = new ArrayList<>(  );
 					adapter = new SearchListAdapter( s,context );
 					lv.setAdapter( adapter );
@@ -104,6 +113,9 @@ public class SearchListPage extends AppCompatActivity {
 		return super.onKeyDown( keyCode, event );
 	}
 
+	/**
+	 * 列表适配器点击后显示详细信息
+	 * */
 	public void lvSetClick(final List<Word> words){
 		lv.setOnItemClickListener( new AdapterView.OnItemClickListener() {
 			@Override
@@ -118,11 +130,12 @@ public class SearchListPage extends AppCompatActivity {
 	public void SearchAgain(View view){
 		EditText et = findViewById( R.id.searchbar );
 		if(flag){
+			//是否隐藏键盘
 			InputMethodManager inputMethodManager =(InputMethodManager)getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 			inputMethodManager.hideSoftInputFromWindow(et.getWindowToken(), 0);
 		}
 		String s = et.getText().toString();
-
+//通过关键字来查询单词
 		List<Word> words = ws.selByWord( s);
 		lv = findViewById( R.id.search_list );
 		adapter = new SearchListAdapter( words,context );

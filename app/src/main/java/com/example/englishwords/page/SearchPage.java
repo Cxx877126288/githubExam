@@ -20,6 +20,7 @@ import com.example.englishwords.util.loadOperator;
  * @title: SearchPage
  * @projectName Words_System
  * @date 2019/9/10  8:39
+ * 加载后的主界面
  */
 public class SearchPage extends AppCompatActivity {
 	private Context context;
@@ -40,7 +41,8 @@ public class SearchPage extends AppCompatActivity {
 		dialog.setPositiveButton( "确定", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialogInterface, int i) {
-				System.exit( 0 );
+//				System.exit( 0 );
+				finish();
 			}
 		} );
 		dialog.setNegativeButton( "取消", new DialogInterface.OnClickListener() {
@@ -62,7 +64,7 @@ public class SearchPage extends AppCompatActivity {
 		return super.onKeyDown( keyCode, event );
 	}
 
-
+//	搜索按钮
 	public void searchClick(View view){
 		EditText et = findViewById( R.id.search_text );
 		String s = et.getText().toString();
@@ -71,6 +73,7 @@ public class SearchPage extends AppCompatActivity {
 		startActivity( intent );
 	}
 
+	//背单词按钮
 	public void startRemberWords(View view){
 		Intent intent = null;
 		if ("true".equals( loadOperator.readLoad( context ).trim() )) {
@@ -81,21 +84,25 @@ public class SearchPage extends AppCompatActivity {
 		startActivity( intent );
 	}
 
+	// 复习按钮
 	public void startReviewWords(View view){
 		Intent intent = new Intent( context,ChooseReviewTime.class );
 		startActivity( intent );
 	}
 
+	//生词本
 	public void startStrange(View view){
 		Intent intent = new Intent( context,Strange.class );
 		startActivity( intent );
 	}
 
+	//测试
 	public void startTest(View view){
 		Intent intent = new Intent( context,TestPage.class );
 		startActivity( intent );
 	}
 
+	//退出
 	public void Quit(View view){
 		quit();
 	}

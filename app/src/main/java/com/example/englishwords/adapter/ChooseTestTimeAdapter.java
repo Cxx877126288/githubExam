@@ -1,4 +1,4 @@
-package com.example.englishwords.myadapter;
+package com.example.englishwords.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -11,16 +11,16 @@ import java.util.List;
 
 /**
  * @author HX
- * @title: ReviewTimeAdapter
+ * @title: ChooseTestTimeAdapter
  * @projectName Words_System
- * @date 2019/9/9  10:51
- * 复习时间的列表适配器
+ * @date 2019/9/10  19:50
+ * 选择测试日期的适配器
  */
-public class ReviewTimeAdapter extends BaseAdapter {
+public class ChooseTestTimeAdapter extends BaseAdapter {
 	private List<String> fileName;
 	private Context context;
 
-	public ReviewTimeAdapter(List<String> fileName,Context context) {
+	public ChooseTestTimeAdapter(List<String> fileName, Context context) {
 		this.fileName = fileName;
 		this.context = context;
 	}
@@ -42,10 +42,10 @@ public class ReviewTimeAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
-		ViewGroup vg =(ViewGroup)View.inflate( context, R.layout.review_adpter,null );
-		TextView tv = vg.findViewById( R.id.review_time );
+		ViewGroup vg =(ViewGroup)View.inflate( context, R.layout.choosetesttime_adpter,null );
+		TextView tv = vg.findViewById( R.id.choosetesttime_time );
 		String get = (String)fileName.get( i );
-		tv.setText(get  );
+		tv.setText( get  );
 
 		return vg;
 	}
